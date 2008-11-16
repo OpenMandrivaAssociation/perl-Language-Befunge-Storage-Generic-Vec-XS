@@ -13,6 +13,7 @@ Source:     http://www.cpan.org/modules/by-module/Language/%{realname}-%{version
 Url:        http://search.cpan.org/dist/%{realname}
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: perl-devel
+BuildRequires: perl(Class::Accessor::Fast)
 BuildRequires: perl(Language::Befunge)
 BuildRequires: perl(Language::Befunge::Vector::XS)
 BuildRequires: perl(Test::More)
