@@ -16,6 +16,8 @@ BuildRequires: perl-devel
 BuildRequires: perl(Language::Befunge)
 BuildRequires: perl(Language::Befunge::Vector::XS)
 BuildRequires: perl(Test::More)
+BuildRequires: perl(aliased)
+Requires: perl(aliased)
 
 
 
