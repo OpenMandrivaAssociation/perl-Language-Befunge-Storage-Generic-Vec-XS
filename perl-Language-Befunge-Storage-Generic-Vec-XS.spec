@@ -1,26 +1,24 @@
+%define upstream_name    Language-Befunge-Storage-Generic-Vec-XS
+%define upstream_version 0.02
 
-%define realname   Language-Befunge-Storage-Generic-Vec-XS
-%define version    0.02
-%define release    %mkrel 1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    Language::Befunge::Storage::Generic::Vec rewritten for speed
-Source:     http://www.cpan.org/modules/by-module/Language/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Language/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Class::Accessor::Fast)
 BuildRequires: perl(Language::Befunge)
 BuildRequires: perl(Language::Befunge::Vector::XS)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(aliased)
+BuildRequires: perl-devel
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: perl(aliased)
-
-
 
 %description
 Language::Befunge::Storage::Generic::Vec implements a linear storage model,
@@ -34,7 +32,7 @@ If the access was done from C, using a signed integer pointer, the access
 would be much faster, and the conversion would be unnecessary.
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -55,5 +53,4 @@ rm -rf %buildroot
 %doc LICENSE README Changes
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 
