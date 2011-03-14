@@ -1,9 +1,9 @@
 %define upstream_name    Language-Befunge-Storage-Generic-Vec-XS
-%define upstream_version 0.02
+%define upstream_version 0.03
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    Language::Befunge::Storage::Generic::Vec rewritten for speed
 License:    GPL+ or Artistic
