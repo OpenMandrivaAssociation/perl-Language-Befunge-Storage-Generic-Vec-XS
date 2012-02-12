@@ -1,25 +1,24 @@
-%define upstream_name    Language-Befunge-Storage-Generic-Vec-XS
+%define upstream_name Language-Befunge-Storage-Generic-Vec-XS
 %define upstream_version 0.03
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
 Release:	2
 
-Summary:    Language::Befunge::Storage::Generic::Vec rewritten for speed
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Language/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Language::Befunge::Storage::Generic::Vec rewritten for speed
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Language/%{upstream_name}-%{upstream_version}.tar.gz
 Source1:	%{name}.rpmlintrc
 
-BuildRequires: perl(Class::Accessor::Fast)
-BuildRequires: perl(Language::Befunge)
-BuildRequires: perl(Language::Befunge::Vector::XS)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(aliased)
-BuildRequires: perl-devel
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires: perl(aliased)
+BuildRequires:	perl(Class::Accessor::Fast)
+BuildRequires:	perl(Language::Befunge)
+BuildRequires:	perl(Language::Befunge::Vector::XS)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(aliased)
+BuildRequires:	perl-devel
+Requires:	perl(aliased)
 
 %description
 Language::Befunge::Storage::Generic::Vec implements a linear storage model,
@@ -36,22 +35,16 @@ would be much faster, and the conversion would be unnecessary.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc LICENSE README Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
-
+%{perl_vendorlib}/*
