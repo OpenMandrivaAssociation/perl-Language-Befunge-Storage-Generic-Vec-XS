@@ -1,0 +1,5 @@
+from Config import *
+from os import environ
+
+addFilter('perl-Language-Befunge-Storage-Generic-Vec-XS-debug.*: description-line-too-long (\(.*\) |)C This package provides debug information for package perl-Language-Befunge-Storage-Generic-Vec-XS\.')
+
