@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	4
 
 Summary:	Language::Befunge::Storage::Generic::Vec rewritten for speed
 License:	GPL+ or Artistic
