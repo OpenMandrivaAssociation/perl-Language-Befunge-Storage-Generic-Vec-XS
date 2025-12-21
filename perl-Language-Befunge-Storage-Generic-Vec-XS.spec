@@ -12,6 +12,7 @@ Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Language/%{upstream_name}-%{upstream_version}.tar.gz
 Source1:	%{name}.rpmlintrc
 
+BuildRequires:	make
 BuildRequires:	perl(Class::Accessor::Fast)
 BuildRequires:	perl(Language::Befunge)
 BuildRequires:	perl(Language::Befunge::Vector::XS)
