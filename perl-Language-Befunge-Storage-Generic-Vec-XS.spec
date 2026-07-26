@@ -1,15 +1,13 @@
 %define upstream_name Language-Befunge-Storage-Generic-Vec-XS
-%define upstream_version 0.03
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.03
+Release:	6
 
 Summary:	Language::Befunge::Storage::Generic::Vec rewritten for speed
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Language-Befunge-Storage-Generic-Vec-XS
-Source0:	https://cpan.metacpan.org/authors/id/I/IN/INFINOID/Language-Befunge-Storage-Generic-Vec-XS-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/I/IN/INFINOID/Language-Befunge-Storage-Generic-Vec-XS-%{version}.tar.gz
 Source1:	%{name}.rpmlintrc
 
 BuildRequires:	make
@@ -33,7 +31,7 @@ If the access was done from C, using a signed integer pointer, the access
 would be much faster, and the conversion would be unnecessary.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -67,8 +65,7 @@ make test
 
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.20.0-1mdv2010.0
 + Revision: 401649
-- rebuild using %%perl_convert_version
-- fixed license field
+- rebuild using %0.03 fixed license field
 
 * Sun Nov 16 2008 Jérôme Quelin <jquelin@mandriva.org> 0.02-1mdv2009.1
 + Revision: 303786
